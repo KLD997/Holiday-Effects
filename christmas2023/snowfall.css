@@ -1,1 +1,39 @@
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1; /* Adjust the z-index to ensure snowflakes are above other elem>
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: snowfall linear infinite;
+}
 
+@keyframes snowfall {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repear: no-repeat;
+    opacity: 0.8;
+    animation: snowflake-fall-rotate 10s linear infinite;
+}
+
+@keyframes snowflake-fall-rotate {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
